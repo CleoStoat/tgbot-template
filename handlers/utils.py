@@ -14,7 +14,6 @@ import config
 def set_bot_commands(
     commands: list[CommandModel], updater: Updater, uow: AbstractUnitOfWork
 ) -> None:
-    command_handlers: list[CommandHandler] = []
     bot_commands: list[BotCommand | Tuple[str, str]] = []
 
     dispatcher = updater.dispatcher
