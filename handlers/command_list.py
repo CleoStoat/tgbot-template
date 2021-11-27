@@ -1,5 +1,6 @@
 from handlers.handler_model import CommandModel
 
+
 COMMANDS = [
     CommandModel(
         priority=200,
