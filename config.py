@@ -8,7 +8,8 @@ credentials = {
 }
 
 defaults = {
-    "SQLITE_DB_NAME": "bot.db"
+    "SQLITE_DB_NAME": "bot.db",
+    "COMMAND_SCOPE": "",
 }
 
 defaults.update(credentials)
@@ -27,5 +28,7 @@ def get_sqlite_uri() -> str:
 
 
 def get_bot_token() -> str:
-    token = get_env("TOKEN")
-    return token
+    return get_env("TOKEN")
+
+def get_command_scope() -> str:
+    return get_env("COMMAND_SCOPE")
