@@ -1,8 +1,10 @@
 from telegram import Update
 from telegram.ext.callbackcontext import CallbackContext
+
 from db.unit_of_work import AbstractUnitOfWork
 
-def start_cmd(
+
+def cmd(
     update: Update, context: CallbackContext, uow: AbstractUnitOfWork
 ) -> None:
     text = f"You started the template bot!"

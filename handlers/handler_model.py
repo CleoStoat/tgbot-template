@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Callable
+from typing import Callable, Optional
 
 @dataclass
 class HandlerModel:
@@ -7,7 +7,7 @@ class HandlerModel:
 
 @dataclass
 class CommandModel(HandlerModel):
-    callback: Callable
     name: str
     description: str
     hidden: bool = False
+    callback: Callable = None

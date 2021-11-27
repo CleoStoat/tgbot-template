@@ -4,9 +4,20 @@ from handlers.handler_model import CommandModel
 COMMANDS = [
     CommandModel(
         priority=200,
-        callback=lambda x: None,
-        name="command_name",
-        description="The description of the command",
+        name="help",
+        description="Get help",
+        hidden=True,
+    ),
+    CommandModel(
+        priority=200,
+        name="start",
+        description="Start the bot",
+        hidden=True,
+    ),
+    CommandModel(
+        priority=200,
+        name="settings",
+        description="Settings for this bot",
         hidden=True,
     ),
 ]

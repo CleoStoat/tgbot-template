@@ -11,10 +11,15 @@ import config
 
 
 from handlers.command_list import COMMANDS
+from handlers.command_mappings import COMMAND_MAPPINGS
 from command_overrides import OVERRIDES
 
 def get_commands():
+
+
     for cmd in COMMANDS:
+        cmd.callback = COMMAND_MAPPINGS[cmd.name]
+        
         if cmd.name not in OVERRIDES:
             continue
 
