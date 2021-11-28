@@ -54,6 +54,6 @@ class SqlAlchemyRepository:
         self.session.add(user_info)
         return
 
-    def find_user_code(self, code: str) -> Optional[UserInfo]:
+    def find_user_code(self, code: str) -> Optional[UserCode]:
         user_code = self.session.query(UserCode).filter_by(code=code).first()
         return user_code

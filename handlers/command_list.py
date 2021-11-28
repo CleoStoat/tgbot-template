@@ -27,4 +27,14 @@ COMMANDS = [
         name="codes",
         description="List of your codes",
     ),
+    CommandModel(
+        priority=200,
+        name="delete_code",
+        description="Delete a code you own",
+    ),
+    CommandModel(
+        priority=200,
+        name="info",
+        description="Info about yourself",
+    ),
 ]
