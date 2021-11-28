@@ -2,6 +2,7 @@ from handlers.command_handlers import help as help_cmd
 from handlers.command_handlers import start
 from handlers.command_handlers import settings
 from handlers.command_handlers import new_code
+from handlers.command_handlers import codes
 
 
 COMMAND_MAPPINGS = {
@@ -9,4 +10,5 @@ COMMAND_MAPPINGS = {
     "start": start.cmd,
     "settings": settings.cmd,
     "new_code": new_code.cmd,
+    "codes": codes.cmd,
 }

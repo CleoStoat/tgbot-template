@@ -23,9 +23,9 @@ class SqlAlchemyRepository:
         self.session.add(user_code)
         return
 
-    def list_user_codes(self, user_id: int) -> list[UserCode]:
-        user_infos = self.session.query(UserInfo).filter_by(user_id=user_id).all()
-        return user_infos
+    def list_user_codes(self, user_id: int) -> list[int]:
+        user_codes = self.session.query(UserCode).filter_by(user_id=user_id).all()
+        return [user_code.code for user_code in user_codes]
 
     def delete_user_code(self, user_id: int, code: str) -> None:
         user_code = self.session.query(UserCode).get({"user_id":user_id, "code":code})

@@ -22,4 +22,9 @@ COMMANDS = [
         name="new_code",
         description="Get a random unique code",
     ),
+    CommandModel(
+        priority=200,
+        name="codes",
+        description="List of your codes",
+    ),
 ]
