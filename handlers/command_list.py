@@ -40,6 +40,11 @@ COMMANDS = [
     CommandModel(
         priority=200,
         name="toggle_active",
-        description="Info about yourself",
+        description="Toggle between active and inactive",
+    ),
+    CommandModel(
+        priority=200,
+        name="rain_money",
+        description="Make money rain from the skies",
     ),
 ]

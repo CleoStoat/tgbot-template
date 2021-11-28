@@ -43,7 +43,7 @@ class SqlAlchemyRepository:
         return
     
     def increase_users_money(self, user_ids: list[int], ammount: decimal.Decimal) -> None:
-        self.session.query(UserInfo).filter(UserInfo.user_id in user_ids).update({UserInfo.money: UserInfo.money + ammount})
+        self.session.query(UserInfo).filter(UserInfo.user_id.in_(user_ids)).update({UserInfo.money: UserInfo.money + ammount})
         return
 
     def update_user_info_last_updated(self, user_id: int, last_updated: datetime.datetime) -> None:
@@ -57,3 +57,7 @@ class SqlAlchemyRepository:
     def find_user_code(self, code: str) -> Optional[UserCode]:
         user_code = self.session.query(UserCode).filter_by(code=code).first()
         return user_code
+
+    def list_user_infos(self) -> list[UserInfo]:
+        user_infos = self.session.query(UserInfo).all()
+        return user_infos
