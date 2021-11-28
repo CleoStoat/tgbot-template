@@ -4,9 +4,9 @@ from sqlalchemy import (
     Column,
     Integer,
     String,
-    Numeric,
     DateTime,
     Boolean,
+    Float,
 )
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm import mapper
@@ -24,7 +24,7 @@ user_info = Table(
     Column("first_name", String),
     Column("last_name", String),
     Column("username", String),
-    Column("money", Numeric),
+    Column("money", Float),
     Column("last_updated", DateTime),
     Column("active", Boolean),
 )

@@ -9,7 +9,7 @@ class UserInfo:
     first_name: str
     last_name: str
     username: str
-    money: Decimal
+    money: float
     last_updated: datetime
     active: bool
 
