@@ -16,7 +16,7 @@ class SqlAlchemyRepository:
         return
     
     def find_user_info(self, user_id: int) -> Optional[UserInfo]:
-        user_info = self.session.query(UserInfo).get(user_id=user_id)
+        user_info = self.session.query(UserInfo).get({"user_id":user_id})
         return user_info
     
     def add_user_code(self, user_code: UserCode) -> None:
@@ -28,7 +28,7 @@ class SqlAlchemyRepository:
         return user_infos
 
     def delete_user_code(self, user_id: int, code: str) -> None:
-        user_code = self.session.query(UserCode).get(user_id=user_id, code=code)
+        user_code = self.session.query(UserCode).get({"user_id":user_id, "code":code})
         if user_code is None:
             return
         self.session.delete(user_code)
@@ -53,3 +53,7 @@ class SqlAlchemyRepository:
         user_info.last_updated = last_updated
         self.session.add(user_info)
         return
+
+    def find_user_code(self, code: str) -> Optional[UserInfo]:
+        user_code = self.session.query(UserCode).filter_by(code=code).first()
+        return user_code
