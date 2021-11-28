@@ -3,7 +3,7 @@ import logging
 from telegram.ext import Updater
 
 import config
-from helpers import init_db, set_commands
+from helpers import init_db, set_handlers
 from db.unit_of_work import SqlAlchemyUnitOfWork
 
 def main():
@@ -16,7 +16,7 @@ def main():
     updater = Updater(token=config.get_bot_token())
     uow = SqlAlchemyUnitOfWork()
 
-    set_commands.set_bot_commands(updater, uow)
+    set_handlers.set_handlers(updater, uow)
 
     updater.start_polling()
     updater.idle()
