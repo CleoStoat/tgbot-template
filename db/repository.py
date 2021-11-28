@@ -35,7 +35,7 @@ class SqlAlchemyRepository:
         return
     
     def set_user_active(self, user_id: int, active: bool) -> None:
-        user_info: Optional[UserInfo] = self.session.query(UserInfo).get(user_id=user_id)
+        user_info: Optional[UserInfo] = self.session.query(UserInfo).get({"user_id": user_id})
         if user_info is None:
             return
         user_info.active = active
@@ -47,7 +47,7 @@ class SqlAlchemyRepository:
         return
 
     def update_user_info_last_updated(self, user_id: int, last_updated: datetime.datetime) -> None:
-        user_info: Optional[UserInfo] = self.session.query(UserInfo).get(user_id=user_id)
+        user_info: Optional[UserInfo] = self.session.query(UserInfo).get({"user_id": user_id})
         if user_info is None:
             return
         user_info.last_updated = last_updated

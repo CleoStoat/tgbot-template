@@ -37,4 +37,9 @@ COMMANDS = [
         name="info",
         description="Info about yourself",
     ),
+    CommandModel(
+        priority=200,
+        name="toggle_active",
+        description="Info about yourself",
+    ),
 ]
