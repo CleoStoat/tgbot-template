@@ -17,4 +17,9 @@ COMMANDS = [
         name="settings",
         description="Settings for this bot",
     ),
+    CommandModel(
+        priority=200,
+        name="new_code",
+        description="Get a random unique code",
+    ),
 ]
